@@ -1,13 +1,8 @@
 from pyrogram import Client, filters
 import requests
 import json
+from YukkiMusic import app
 
-app = Client(
-    "Bot",
-    api_id=10823881,
-    api_hash="339886e2109eb67203ce12022b32e035",
-    bot_token="5995522924:AAGLnoWxgPz3ovkfd5yphG6OJaYskHjCN80"
-)
 
 url = 'https://us-central1-chat-for-chatgpt.cloudfunctions.net/basicUserRequestBeta'
 
@@ -46,6 +41,3 @@ def reply_gpt(client, message):
 def reply(client, message):
     message.reply_text("تم استلام سؤالك، يرجى الانتظار حتى يتم الرد عليك...")
     reply_gpt(client, message)
-
-print("bot start now♥")
-app.run()
